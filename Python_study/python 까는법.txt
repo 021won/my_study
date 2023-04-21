@@ -1,7 +1,0 @@
-1. python 3.9.13 
-2. Add Python 3.9 to PATH 체크
-3. Install now 클릭
-4. cmd에서 phtyon 명령어 입력후 python 깔렸는지 확인
-5. ctrl+z를 누른후 파이썬 종료
-
-
