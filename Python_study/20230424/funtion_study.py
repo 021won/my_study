@@ -97,48 +97,48 @@ def 함수이름 (함수입력값):
 # 괄호 안에 있는 값
 # 매개변수, argument 혼용 
 
-def add(a, b):
-    return a + b
-def print_add(a, b):
-    print(a + b)
-print_add(1, 2)
+# def add(a, b):
+#     return a + b
+# def print_add(a, b):
+#     print(a + b)
+# print_add(1, 2)
 
-result = print_add(1, 2)
-print(result)
+# result = print_add(1, 2)
+# print(result)
 
-print_add("안녕", 1) # Error
-print_add(1, 2)
-print_add("안녕", "하세요")
-print_add("하세요", "안녕")
-순서 잘 지키기, 순서 안지키면 Error 발생 가능성 있음
-print_add(b = "하세요", a = "안녕") # 매개변수에 아예 특정해서 넣어버리면 순서 바뀌어도 상관없음
+# print_add("안녕", 1) # Error
+# print_add(1, 2)
+# print_add("안녕", "하세요")
+# print_add("하세요", "안녕")
+# # 순서 잘 지키기, 순서 안지키면 Error 발생 가능성 있음
+# print_add(b = "하세요", a = "안녕") # 매개변수에 아예 특정해서 넣어버리면 순서 바뀌어도 상관없음
 
-def swap_number(a, b):
-    temp = a
-    a = b # 블럭 안에서 적용받는 변수 : 지역변수, local변수
-    b = temp
-    print(a, b)
-    return(a, b)
+# def swap_number(a, b):
+#     temp = a
+#     a = b # 블럭 안에서 적용받는 변수 : 지역변수, local변수
+#     b = temp
+#     print(a, b)
+#     return(a, b)
 
-a = 1 # 전역변수, global변수
-b = 2
-print("함수 호출 전", a, b)
-a, b = swap_number(a, b)
-print("함수 호출 후", a, b)
-지역변수와 전역변수의 이름이 같더라도 다른 변수임 (주의)
+# a = 1 # 전역변수, global변수
+# b = 2
+# print("함수 호출 전", a, b)
+# a, b = swap_number(a, b)
+# print("함수 호출 후", a, b)
+# 지역변수와 전역변수의 이름이 같더라도 다른 변수임 (주의)
 
 # 다음 함수를 정의하세요.
 # 함수 이름 : mul
 # 함수 입력값 : 정수 2개
 # 함수 출력값 : 정수 2개의 곱
 
-def mul(a, b):
-    return a * b
+# def mul(a, b):
+#     return a * b
 
-print(mul(2, 6))
+# print(mul(2, 6))
 
-result = mul(1, 2)
-print(result)
+# result = mul(1, 2)
+# print(result)
 
 # 기본 값 매개변수
 # default value parameter
@@ -159,23 +159,25 @@ print(result)
 # def test_func2(x, test=None):
 #     if test == None:
 #         test = []
-#     tset.append(x)
+#     test.append(x)
 #     print(x, test)
+# print(test_func2(2))
 
 # 기본값이 있는 매개변수는 기본값이 없는 매개변수보다 뒤에 위치해야함, Erorr 발생
 # def sub(n1, n3, n2=0):
 #     print(n1 - n2 - n3)
+# sub(3, 2)
 
 # *를 사용한 매개변수
 # 입력값이 몇개가 될 지 모를 때 (안 정해졌을 때)
-# def add_many(*args):
+#def add_many(*args):
     # 튜플처럼 사용
     # 인덱싱, 슬라이싱 사용가능
     # for문 사용가능
-#     result = 0
-#     for i in args:
-#         result += i
-#     return result
+    # result = 0
+    # for i in args:
+    #     result += i
+    # return result
 
 # result1 = add_many(1, 2, 3, 4, 5)
 # print(result1)
@@ -189,6 +191,7 @@ print(result)
 #     for i in args:
 #         result += i
 #     return n1
+# print(calc_many(7, 5, 6))
 
 # 키워드 매개변수
 # **kwargs
@@ -262,7 +265,7 @@ hello
 #     print(message)
 #     print("*" * n)
 #     return None # 생략가능, 반환값을 None으로 명시했기 때문
-#get_bordered_str("hello")
+# get_bordered_str("hello")
 
 # is로 시작하는 함수 이름은 질문형
 # bool타입 함수(True, False)를 return하게 됨
@@ -301,7 +304,7 @@ hello
 ****
 """
 
-def print_stars(n):
+# def print_stars(n):
 #     for i in range(n): # 0 ~ n-1
 #         for j in range(i+1): # 0
 #             print("*", end="") # 
@@ -313,12 +316,12 @@ def print_stars(n):
 #     print()
 # print_stars(4)
 
-    i = 0
-    while i < n:
-        j = 0
-        while j < i+1:
-            print("*", end="")
-            j += 1
-        print()
-        i += 1
-print_stars(4)
+#     i = 0
+#     while i < n:
+#         j = 0
+#         while j < i+1:
+#             print("*", end="")
+#             j += 1
+#         print()
+#         i += 1
+# print_stars(4)
