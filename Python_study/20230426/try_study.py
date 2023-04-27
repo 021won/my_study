@@ -20,6 +20,7 @@ try:
     100 / 0
 except ZeroDivisionError as e:
     print(e)
+    
 
 print("에러 발생 후")
 
@@ -48,8 +49,8 @@ except:
 finally:
     f.close()
 
-else
-오류가 발생하지 않으면 실행되는 코드
+# else
+# 오류가 발생하지 않으면 실행되는 코드
 try:
     age = int(input("나이: "))
 except:
