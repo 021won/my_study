@@ -36,7 +36,7 @@
 # a = int(input("숫자를 입력하세요."))
 # b = int(input("숫자를 입력하세요."))
 
-# 다시 확인하기
+# # 다시 확인하기
 # def div2(a, b):
 #     if a >= b:
 #         a // b, a % b
@@ -73,6 +73,7 @@
 #         print(string[i : i+unit])
 #         i += unit
 # func("테스트문장입니다.") 
+# func('테스트를 위한 문장입니다.',4)
 
 # def test (*args):
 #     print(args)
@@ -89,12 +90,12 @@
 
 # test2(a = 1, b = 2, c = 3)
 
-# add_all(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 # def add_all(*inputs):
 #     s = 0
 #     for i in range(len(inputs)):
 #         s += inputs[i]
 #     return s
+# add_all(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 # TypeError: unsupported operand type(s) for +=: 'int' and 'list'
 
 # 여기는 동네 유명한 빵집이다.
@@ -103,25 +104,32 @@
 # 함수는 사람이름으로 되어 있는 리스트를 받아서
 # "대기번호 x번 : 사람이름"을 화면에 출력하고 (번호표, 사람이름)을 원소로 이루어진 리스트를 반환한다.
 
-# people = ["펭수", "뽀로로", "뚝딱이", "텔레토비"]
+# people = ['펭수','뽀로로','뚝딱이','텔레토비']
 
 # def func1(line):
 #     new_lines = []
-#     i = 1 # 대기번호를 트래킹하는 변수 i
+#     i=1 #대기번호를 트래킹하는 변수 i
 #     for x in line:
-#         print("대기번호 %d번 : %s" % ((i, x)))
-#         new_lines.append(i, x)
-#         i += 1 # 별도로 업데이트를 해줘야 함
+#         print('대기번호 %d번 : %s' %(i,x))
+#         new_lines.append((i,x))
+#         i +=1 #별도로 업데이트를 해줘야 함.
 #     return new_lines
+# lines = func1(people)
+# print(lines)
 
-# def func1(line):
-#     new_lines = []
-#     for idx, val in enumerate(line):
-#         print("대기번호 %d번 : %s" % (idx, val))
-#         new_lines.append((idx + 1, val))
-        
-#     return new_lines
-# print(func1("펭수"))
+# def fact(n):
+#     f=1 #곱을 계산할 변수의 초깃값
+#     for i in range(1,n+1): #1부터 n까지 반복
+#         f = f*i #곱셈연산
+#     return f
+# print(fact(5))
+
+# def fact(n):
+#     if n<=1: #n이 1이하이면 종료조건
+#         return 1
+#     return n*fact(n-1)
+# print(fact(5))
+
 
 # enumerate (열거하다)
 # 반복 가능한 객체의 인덱스와 원소에 함께 접근할 수 있는 함수.
@@ -145,6 +153,10 @@
 
 # lambda : 한 줄을 실행한 결과 값이 바로 반환값이 됨.
 
+# items = [1,24,3,6,7]
+# str_items = list(map(lambda x:str(x),items))
+# print(str_items)
+
 # map : 리스트, 튜플, 스트링 등 자료형 각각의 원소에 동일한 함수를 적용
 # items = [1, 2, 3, 4, 5]
 
@@ -163,7 +175,7 @@
 # str_items = list(map(lambda x : str(x), items))
 # print(str_items) # ['1', '24', '3', '6', '7']
 
-# list comprehension
+# # list comprehension
 # 1.
 # list_1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # #2.
@@ -234,7 +246,7 @@
 # print(lc_5)
 
 
-# improt numpy as np
+import numpy as np
 
 # n = 1000000
 # numpy_arr = np.arange(n)
@@ -250,11 +262,26 @@
 # print(type(a))
 # print(a)
 
+
 # 벡터화
 # 배열은 for문을 작성하지 않고 데이터를 일괄 처리하는 것
 
+# arr = np.array([[1,2,3],[4,5,6]])
+# print(arr)
+# print(arr+arr)
+# print(arr/arr)
+# print(10 - arr)
+
+
 # 브로드캐스팅
 # 다른 모양의 배열 간의 산술 연산을 수행할 수 있도록 해주는 numpy의 기능.
+# print(10 - arr)
+
+# list_1 = [1,2,3]
+# print(list_1+list_1)
+
+# arr_1 = np.array([1,2,3])
+# print(arr_1+arr_1)
 
 # dtype
 # 배열에 담긴 원소의 자료형 (ndarray는 같은 자료형을 담음.)
@@ -347,7 +374,8 @@
 # 내가 다른 사람에게 코드를 보냈을 때 그대로 나오게 함
 
 # np.random.seed(42)
-import random
+# 
+# import random
 
 # lotto_numbers = list(range(1, 46))
 # my_lotto = []
@@ -358,16 +386,16 @@ import random
 # print(my_lotto)
 
 
-import numpy as np
+# import numpy as np
 
 
-def make_lotto(count):
-    for i in range(count):
-        lotto_num = [] # 로또 번호가 담길 리스트형 변수
-        for j in range(6): # 6번 반복
-            lotto_num = np.random.choice(range(1, 46), 6, replace = False)
-            lotto_num.sort() # 값 정렬
-        print('{}.로또번호: {}').format(i + 1, lotto_num)
+# def make_lotto(count):
+#     for i in range(count):
+#         lotto_num = [] # 로또 번호가 담길 리스트형 변수
+#         for j in range(6): # 6번 반복
+#             lotto_num = np.random.choice(range(1, 46), 6, replace = False)
+#             lotto_num.sort() # 값 정렬
+#         print('{}.로또번호: {}').format(i + 1, lotto_num)
 
-count = int(input('로또 번호를 몇개 생성할까요?'))
-make_lotto(count)
+# count = int(input('로또 번호를 몇개 생성할까요?'))
+# make_lotto(count)

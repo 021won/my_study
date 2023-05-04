@@ -1,117 +1,20 @@
-# 5월 1일 학습내용
-### 류영표 교수님 강의
-- https://github.com/Youngpyoryu/Lecture_Note
-- https://colab.research.google.com/drive/1ui5VjU3VbQ0D6SbgruuEm759wqgNFdWN?usp=sharing#scrollTo=YtgNOJJKIqDF
-## Python 복습
-### & (비트 연산자)
-- 교집합
-- 논리 연산자 아님
-#### 예제
-```Python
-birth_year = int(input("당신이 태어난 년도를 입력하세요."))
+# import random
 
-age = 2023 - birth_year + 1
+# true_value = random.randint(1, 100)
+# input_value = 99999 # 임의의 값 할당.
+# print("숫자를 맞춰보세요.")
 
-if 20 <= age <= 26:
-  print("대학생")
-elif 17 <= age < 20:
-  print("고등학생")
-elif 8 <= age < 14:
-  print("초등학생")
-else:
-  print("학생이 아닙니다.")
-```
-```Python
-# 1부터 10까지의 합을 구하시오.(range 함수를 이용하시오.)
-sum = 0
-for i in range(1, 11):
-  sum = sum + i
-print(sum) # 55
-```
-```Python
-# 별 찍기
-def stars(n):
-  for i in range(0, n):
-    for j in range(i+1):
-      print("*", end="")
-    print()  
-stars(5)
-"""
-*
-**
-***
-****
-*****
-"""
+# while true_value != input_value:
+#     input_value = int(input())
+#     if input_value > true_value: # 사용자의 입력값이 true_value 보다 클 때
+#         print("숫자가 너무 큽니다.")
+#     else:
+#         print("숫자가 너무 작습니다.") # 사용자의 입력값이 true_value 보다 작을 때
+# print(f"정답입니다. 입력한 숫자는 {true_value}입니다.")
 
-n = int(input("n : "))
-for i in range(n):
-  print(" " * i, end= "") # end의 역할 sep와 비슷한 기능(구분자 사용)
-  print("*" * n)
-
-"""
-n : 5
-*****
- *****
-  *****
-   *****
-    *****
-"""
-
-n = int(input("n :"))
-for i in range(1, n+1):
-  print("*" * i)
-"""
-n :5
-*
-**
-***
-****
-*****
-"""
-
-n = int(input("n : "))
-for i in range(1, n+1):
-  print(" " * (n-i), end="")
-  print("*"*i)
-"""
-n : 5
-    *
-   **
-  ***
- ****
-*****
-"""
-
-n = int(input("n :"))
-for i in range(n):
-  print("*"*(n-i))
-"""
-n :5
-*****
-****
-***
-**
-*
-"""
-
-n = int(input("n : "))
-for i in range(1, n+1):
-  print(" "*(n-i), end="")
-  print("*"*(2*i-1))
-"""
-n : 5
-    *
-   ***
-  *****
- *******
-*********
-"""
-```
-#### 예제
-```Python
 # word = ["school", "game", "piano", "science", "hotel", "mountain"] 중
 # 글자수가 6글자 이상인 문자를 모아 새로운 리스트를 생성하세요.
+
 word = ["school", "game", "piano", "science", "hotel", "mountain"]
 a = list()
 for i in range(len(word)):
@@ -119,11 +22,12 @@ for i in range(len(word)):
         a.append(word[i])
 print(a) # ['school', 'science', 'mountain']
 
-1-100 까지 숫자 중
+# 1-100 까지 숫자 중
 # 3과 5의 공배수일 경우 "3과 5의 공배수"
 # 나머지 숫자 중 3의 배수일 경우 "3의 배수"
 # 나머지 숫자 중 5의 배수일 경우 "5의 배수"
 # 모두 해당되지 않을 경우 그냥 숫자를 출력하세요.
+
 a = int(input("정수를 입력하세요."))
 if a <= 0:
     print("음수는 정의하지 않음.")
@@ -141,6 +45,7 @@ else:
             print("1과 100 사이의 숫자가 아닙니다.")
 
 # 사용자로부터 숫자를 계속 입력받다가 s or S 를 입력하면 합계 출력
+
 c = 0
 d = 1
 
@@ -151,9 +56,10 @@ while (d == 1):
     else:
         a = int(a)
         c += a
-print(c)
+print(c)        
 
 # 사람별 평균 구하기.
+
 kor_score = [39, 69, 20, 100, 80]
 math_score = [32, 59, 85, 30, 90]
 eng_score = [49, 70, 48, 60, 100]
@@ -171,4 +77,3 @@ else:
     a, b, c, d, e = student_score # 학생별 점수를 unpacking
     student_average = [a / 3, b / 3, c / 3, d / 3, e / 3]
     print(student_average) # [40.0, 66.0, 51.0, 63.333333333333336, 90.0]
-```
