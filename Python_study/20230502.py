@@ -292,6 +292,9 @@ import numpy as np
 # ndim
 # 배열의 차원의 갯수
 
+# arr = np.array([[1,2,3],[4,5,6]])
+# print(arr.shape)
+
 # # 0차원 (상수)
 
 # import numpy as np
@@ -320,7 +323,7 @@ import numpy as np
 
 # range 함수를 이용
 
-# import numpy as np
+import numpy as np
 
 # arr1 = np.array(range(20))
 # print(arr1)
@@ -331,11 +334,18 @@ import numpy as np
 # zeros
 # 0, 공간이 있음, 0이 할당됨
 
+# print(np.zeros(5))
+# print(np.ones((3,3)))
+# print(np.full((4),5))
+
 # arr3 = np.empty((2, 3), dtype = np.float32)
 # print(arr3)
 #[[0.0000000e+00 7.1746481e-43 1.4349296e-42]
 # [2.4035071e-41 2.7963191e-39 1.1387602e-38]]
 # 실수, 공간 없음, 0보다 더 아래
+# print(np.arange(-3,3))
+# print(np.arange(3,50,3))
+# print(np.linspace(0,20,5))
 
 # 배열 결합 함수
 # hstack, concatenate(axis=0)
